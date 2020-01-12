@@ -12,12 +12,14 @@
 	<div>
 		<label>Unidade:</label><br />
 		<input type="text" id="txtUnidade" name="txtUnidade" size="60" />
-		<input type="hidden" id="idUnidade"  name="idUnidade" />
+		<input type="hidden" id="idUnidade" name="idUnidade" />
 	</div>
 	<div>
 		<label>Cliente:</label><br />
-		<input type="text"   id="txtCliente" name="txtCliente" size="60" />
+		<input type="text" id="txtCliente" name="txtCliente" size="60" />
 	</div>
+
+	<button id="btConsultaCliente">Consultar</button>
 </div>
 
 <div id="modal">
@@ -26,6 +28,14 @@
 		<a id="closeModal">X</a>
 	</div>
 	<ul id="modal_ul"></ul>
+</div>
+
+<div id="modal_consulta">
+	<h1>Resultados</h1>
+	<div>
+		<a id="closeModalConsulta">X</a>
+	</div>
+	<div id="view_consulta"></div>
 </div>
 
 <script src="lib/vendor/jquery/jquery.js"></script>

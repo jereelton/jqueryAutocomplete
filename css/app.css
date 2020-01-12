@@ -39,7 +39,8 @@ h1 {
 	background: none;
 }
 
-#modal {
+#modal,
+#modal_consulta {
 	z-index: 5000;
 	position: fixed;
 	width: 800px;
@@ -49,6 +50,16 @@ h1 {
 	background-color: #FFFFFF;
 	display: none;
 	overflow: hidden;
+}
+
+#modal_consulta p {
+	width: 97.3%;
+	height: 200px;
+	margin: 0px auto;
+	padding: 10px;
+	text-align: left;
+	float: left;
+	border: solid #888888 1px;
 }
 
 #modal_ul {
@@ -74,10 +85,22 @@ h1 {
 	background-color: #DDDDDD;
 }
 
-#closeModal {
+#closeModal,
+#closeModalConsulta {
 	position: relative;
 	float: right;
 	margin-right: 10px;
 	margin-top: -40px;
 	cursor: pointer;
+}
+
+#btConsultaCliente {
+	width: 100px;
+	margin: 10px;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	box-shadow: 1px 2px 3px #888888;
+	background-color: #00088F;
+	color: #FFFFFF;
 }
