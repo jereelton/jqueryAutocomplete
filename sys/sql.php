@@ -4,33 +4,39 @@
 	$unidade  = (isset($_GET['unidade'])) ? $_GET['unidade'] : "";
 	$response = array();
 
-	$clientes = [
-		0 => [ "response" => "Empresa de Telecom", "unidade"  => 1 ],
-		1 => [ "response" => "Negocios e Tecnologia", "unidade"  => 0 ],
-		2 => [ "response" => "Desenvolvedores PHP", "unidade"  => 2	],
-		3 => [ "response" => "WePack Desenvolvedores", "unidade"  => 0],
-		4 => [ "response" => "Nova Empresa Web", "unidade"  => 1 ]
-	];
-
 	$unidades = [
-		0 => [ "response" => "Unidade 0" ],
-		1 => [ "response" => "Unidade 1" ],
-		2 => [ "response" => "Unidade 2" ]
+		0 => [ "id" => 0, "nome_unidade" => "Unidade Campinas"            ],
+		1 => [ "id" => 1, "nome_unidade" => "Unidade Sao Paulo"           ],
+		2 => [ "id" => 2, "nome_unidade" => "Unidade Sao Jose dos Campos" ],
+		3 => [ "id" => 3, "nome_unidade" => "Unidade Taubate"             ],
+		4 => [ "id" => 4, "nome_unidade" => "Unidade Cacapava"            ]
 	];
 
-	// SELECT * FROM [clientes] WHERE cliente = {PARAM};
-	if($cliente != "" && $unidade == "") {
-		for($i = 0; $i < count($clientes); $i++) {
-			if(stristr($clientes[$i]["response"], $cliente)) {
-				array_push($response, $clientes[$i]);
+	$clientes = [
+		0 => [ "nome_cliente" => "Empresa de Telecom",     "unidade"  => 1 ],
+		1 => [ "nome_cliente" => "Negocios e Tecnologia",  "unidade"  => 0 ],
+		2 => [ "nome_cliente" => "Desenvolvedores PHP",    "unidade"  => 2 ],
+		3 => [ "nome_cliente" => "WePack Desenvolvedores", "unidade"  => 0 ],
+		4 => [ "nome_cliente" => "Nova Empresa Webdev",    "unidade"  => 1 ],
+		5 => [ "nome_cliente" => "Empresa Devel PHP",      "unidade"  => 1 ],
+		6 => [ "nome_cliente" => "Tecnologia Web Plus PHP","unidade"  => 0 ],
+		7 => [ "nome_cliente" => "Codexs Desenvolvimento", "unidade"  => 2 ],
+		8 => [ "nome_cliente" => "Webmaster Developers",   "unidade"  => 2 ],
+		9 => [ "nome_cliente" => "Negocios Web PHP Mysql", "unidade"  => 1 ]
+	];
+	// Simulanado uma consulta SQL SELECT
+	if($unidade != "" && $cliente == "") {
+		for($i = 0; $i < count($unidades); $i++) {
+			if(stristr($unidades[$i]["nome_unidade"], $unidade)) {
+				array_push($response, $unidades[$i]);
 			}
 		}
 	}
-	// SELECT * FROM clientes c JOIN unidades u ON u.id = 'unidade_cliente' WHERE c.response LIKE '%cliente%';
-	if($cliente != "" && $unidade != "") {
-		for($i = 0; $i < count($unidades); $i++) {
-			if($cliente == $i && stristr($unidades[$i]["response"], $unidade)) {
-				array_push($response, $unidades[$i]);
+	// Simulanado uma consulta SQL SELECT com o uso do JOIN
+	if($unidade != "" && $cliente != "") {
+		for($i = 0; $i < count($clientes); $i++) {
+			if( stristr($clientes[$i]["nome_cliente"], $cliente) && ($clientes[$i]["unidade"] == $unidade) ) {
+				array_push($response, array_merge($clientes[$i], $unidades[$clientes[$i]["unidade"]]));
 			}
 		}
 	}

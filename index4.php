@@ -10,13 +10,13 @@
 
 <div id="container">
 	<div>
-		<label>Cliente:</label><br />
-		<input type="text"   id="txtCliente" name="txtCliente" size="60" />
+		<label>Unidade:</label><br />
+		<input type="text" id="txtUnidade" name="txtUnidade" size="60" />
 		<input type="hidden" id="idUnidade"  name="idUnidade" />
 	</div>
 	<div>
-		<label>Unidade:</label><br />
-		<input type="text" id="txtUnidade" name="txtUnidade" size="60" />
+		<label>Cliente:</label><br />
+		<input type="text"   id="txtCliente" name="txtCliente" size="60" />
 	</div>
 </div>
 
