@@ -3,13 +3,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Auto Complete</title>
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
-<script src="jquery.js"></script>
-<script src="javascript/jquery-ui-1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="lib/vendor/jquery/jquery-ui.css" />
 </head>
 <body>
-    <label>Cliente:</label>
-    <input type="text" id="txtCliente" name="txtCliente" size="60"/>
+	
+<label>Cliente:</label>
+<input type="text" id="txtCliente" name="txtCliente" size="60"/>
+<label>Unidade:</label>
+<input type="text" id="txtUnidade" name="txtUnidade" size="60"/>
+
+<script src="lib/vendor/jquery/jquery.js"></script>
+<script src="lib/vendor/jquery/jquery-ui.js"></script>
+
 <script type="text/javascript">
 $(document).ready(function() {
      
@@ -24,7 +29,7 @@ $(document).ready(function() {
 		if(!dig) {return;}
 
 	    // Captura o retorno do retornaCliente.php
-	    $.getJSON('processa.php?busca='+dig, function(data){
+	    $.getJSON('sys/processa.php?busca='+dig, function(data){
 	        var cliente = [];
 	         
 	        // Armazena na array capturando somente o nome do cliente
