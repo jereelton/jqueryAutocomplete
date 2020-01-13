@@ -27,9 +27,13 @@
 	];
 	// Simulanado uma consulta SQL SELECT
 	if($unidade != "" && $cliente == "" && $consulta == "") {
-		for($i = 0; $i < count($unidades); $i++) {
-			if(stristr($unidades[$i]["nome_unidade"], $unidade)) {
-				array_push($response, $unidades[$i]);
+		if($unidade == "%%%") {
+			$response = $unidades;
+		} else {
+			for($i = 0; $i < count($unidades); $i++) {
+				if(stristr($unidades[$i]["nome_unidade"], $unidade)) {
+					array_push($response, $unidades[$i]);
+				}
 			}
 		}
 	}
